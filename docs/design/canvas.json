@@ -1,0 +1,40 @@
+{
+  "v": 3,
+  "createdOnFiles": {"v": 1, "at": "2026-10-15T02:08:27Z"},
+  "title": "Cakrasoft Order Station — UI Redesign",
+  "launch": {"view": "canvas"},
+  "pages": [],
+  "boards": {
+    "Main.dc.html": {"x": 0, "y": 0, "w": 1280, "h": 1640, "title": "Design system · tokens & components"},
+    "Phone-Login.dc.html": {"x": 1360, "y": 0, "w": 390, "h": 844, "title": "Phone · Login"},
+    "Phone-Home.dc.html": {"x": 1830, "y": 0, "w": 390, "h": 844, "title": "Phone · Home"},
+    "Phone-Order.dc.html": {"x": 2300, "y": 0, "w": 390, "h": 844, "title": "Phone · New order (interactive)", "is_interactive": true},
+    "Phone-CO.dc.html": {"x": 2770, "y": 0, "w": 390, "h": 844, "title": "Phone · Captain order (interactive)", "is_interactive": true},
+    "Phone-Payment.dc.html": {"x": 3240, "y": 0, "w": 390, "h": 844, "title": "Phone · Payment flow (interactive)", "is_interactive": true},
+    "Phone-COList.dc.html": {"x": 3710, "y": 0, "w": 390, "h": 844, "title": "Phone · Captain orders"},
+    "Phone-Printer.dc.html": {"x": 4180, "y": 0, "w": 390, "h": 844, "title": "Phone · Printer picker (interactive)", "is_interactive": true},
+    "Tablet-Order.dc.html": {"x": 1360, "y": 1200, "w": 1280, "h": 800, "title": "Tablet · New order + persistent cart (interactive)", "is_interactive": true},
+    "Tablet-CO.dc.html": {"x": 2720, "y": 1200, "w": 1280, "h": 800, "title": "Tablet · Captain order + payment panel"},
+    "States.dc.html": {"x": 1360, "y": 2400, "w": 1720, "h": 844, "title": "States · loading, empty, error, authorise"}
+  },
+  "order": [
+    "Main.dc.html",
+    "Phone-Login.dc.html",
+    "Phone-Home.dc.html",
+    "Phone-Order.dc.html",
+    "Phone-CO.dc.html",
+    "Phone-Payment.dc.html",
+    "Phone-COList.dc.html",
+    "Phone-Printer.dc.html",
+    "Tablet-Order.dc.html",
+    "Tablet-CO.dc.html",
+    "States.dc.html"
+  ],
+  "notes": {
+    "t_ds": {"x": 0, "y": -300, "text": "Design system", "kind": "title1", "maxW": 1280},
+    "t_phone": {"x": 1360, "y": -300, "text": "Phone · 390 × 844 · core cashier flow", "kind": "title1", "maxW": 3210},
+    "t_tablet": {"x": 1360, "y": 900, "text": "Tablet · ≥ 840 px wide · two-pane", "kind": "title1", "maxW": 2640},
+    "t_states": {"x": 1360, "y": 2100, "text": "States", "kind": "title1", "maxW": 1720}
+  },
+  "designSystems": []
+}

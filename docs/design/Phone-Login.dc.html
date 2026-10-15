@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Login</title>
+<!-- design-canvas runtime omitted: open in a browser as static HTML; {{holes}} and sc-for render only in the canvas -->
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#027801}a:hover{color:#015C01}
+button,input{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F3F4F1; font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif; color: #171A16; display: flex; flex-direction: column; padding: 8px 16px 24px">
+  <div style="display: flex; justify-content: flex-end">
+    <button aria-label="Server settings" style="width: 48px; height: 48px; border: 0; border-radius: 10px; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#545C52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"></rect><rect x="3" y="13" width="18" height="7" rx="2"></rect><path d="M7 7.5h.01M7 16.5h.01"></path></svg></button>
+  </div>
+  <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding: 40px 4px 28px">
+    <img src="../../assets/images/logo.png" alt="Cakrasoft" style="width: 56px; height: 56px">
+    <div style="display: flex; flex-direction: column; gap: 4px">
+      <h1 style="margin: 0; font-size: 28px; line-height: 34px; font-weight: 800; letter-spacing: -0.01em">Sign in</h1>
+      <p style="margin: 0; font-size: 15px; line-height: 22px; color: #545C52">Cakrasoft Order Station</p>
+    </div>
+  </div>
+  <form style="display: flex; flex-direction: column; gap: 16px; background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 14px; padding: 20px">
+    <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: #545C52">User ID
+      <input value="KASIR01" autocomplete="username" style="height: 52px; box-sizing: border-box; border: 1px solid #C9CEC5; border-radius: 10px; padding: 0 14px; font-size: 17px; color: #171A16; text-transform: uppercase">
+    </label>
+    <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: #545C52">Password
+      <span style="display: flex; align-items: center; height: 52px; box-sizing: border-box; border: 2px solid #027801; border-radius: 10px; padding: 0 4px 0 13px">
+        <input type="password" value="kasir123" autocomplete="current-password" style="flex: 1; border: 0; outline: none; font-size: 17px; background: transparent; min-width: 0">
+        <button type="button" aria-label="Show password" style="width: 44px; height: 44px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#545C52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+      </span>
+    </label>
+    <fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px">
+      <legend style="font-size: 13px; font-weight: 600; color: #545C52; padding: 0; margin-bottom: 6px">Shift</legend>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; background: #F3F4F1; border-radius: 10px; padding: 4px">
+        <button type="button" style="height: 44px; border: 0; border-radius: 8px; background: transparent; font-size: 16px; font-weight: 600; color: #545C52">A</button>
+        <button type="button" aria-pressed="true" style="height: 44px; border: 0; border-radius: 8px; background: #FFFFFF; box-shadow: 0 1px 3px rgba(23, 26, 22, 0.14); font-size: 16px; font-weight: 800; color: #171A16">B</button>
+        <button type="button" style="height: 44px; border: 0; border-radius: 8px; background: transparent; font-size: 16px; font-weight: 600; color: #545C52">C</button>
+        <button type="button" style="height: 44px; border: 0; border-radius: 8px; background: transparent; font-size: 16px; font-weight: 600; color: #545C52">D</button>
+      </div>
+    </fieldset>
+    <button type="submit" style="height: 52px; border: 0; border-radius: 10px; background: #027801; color: #FFFFFF; font-size: 17px; font-weight: 700; margin-top: 4px">Sign in</button>
+  </form>
+  <div style="flex: 1"></div>
+  <div style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; color: #545C52">
+    <span style="width: 8px; height: 8px; border-radius: 4px; background: #027801"></span>
+    <span>Connected · 192.168.1.20:8080</span>
+    <a href="#" style="font-weight: 700; text-decoration: none; padding: 12px 4px">Change</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

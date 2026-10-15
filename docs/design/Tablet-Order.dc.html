@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tablet new order</title>
+<!-- design-canvas runtime omitted: open in a browser as static HTML; {{holes}} and sc-for render only in the canvas -->
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#027801}a:hover{color:#015C01}
+button,input{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 1280px; height: 800px; box-sizing: border-box; background: #F3F4F1; font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif; color: #171A16; display: flex">
+
+  <nav style="width: 88px; flex: 0 0 auto; background: #FFFFFF; border-right: 1px solid #E1E4DE; display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 16px 0">
+    <a href="Phone-Home.dc.html" style="width: 72px; display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; color: #545C52; font-size: 12px; font-weight: 600; padding: 6px 0"><span style="width: 56px; height: 32px; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#545C52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7v8a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1Z"></path></svg></span>Home</a>
+    <a href="#" aria-current="page" style="width: 72px; display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; color: #027801; font-size: 12px; font-weight: 700; padding: 6px 0"><span style="width: 56px; height: 32px; border-radius: 16px; background: #E3F1E0; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#027801" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h10"></path><path d="M19 16v6M16 19h6"></path></svg></span>New order</a>
+    <a href="Tablet-CO.dc.html" style="width: 72px; display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; color: #545C52; font-size: 12px; font-weight: 600; padding: 6px 0; text-align: center"><span style="width: 56px; height: 32px; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#545C52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"></rect><path d="M9 8h6M9 12h6M9 16h3"></path></svg></span>Captain orders</a>
+  </nav>
+
+  <aside style="width: 208px; flex: 0 0 auto; display: flex; flex-direction: column; border-right: 1px solid #E1E4DE; background: #F8F9F7">
+    <div style="padding: 20px 16px 12px; display: flex; flex-direction: column; gap: 2px">
+      <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #545C52">Outlet</span>
+      <button style="height: 40px; border: 0; background: transparent; padding: 0; display: flex; align-items: center; gap: 6px; font-size: 16px; font-weight: 800; color: #171A16; text-align: left">Kayu Manis<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171A16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
+    </div>
+    <div style="flex: 1; overflow-y: auto; padding: 0 8px 16px; display: flex; flex-direction: column; gap: 4px">
+      <sc-for list="{{cats}}" as="c" hint-placeholder-count="6">
+        <button onClick="{{c.pick}}" style="height: 52px; border: 0; border-radius: 10px; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; font-size: 15px; text-align: left; {{c.style}}">{{c.name}}<sc-if value="{{c.hasCount}}" hint-placeholder-val="{{false}}"><span style="min-width: 22px; height: 22px; padding: 0 6px; box-sizing: border-box; border-radius: 11px; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; {{c.badgeStyle}}">{{c.count}}</span></sc-if></button>
+      </sc-for>
+    </div>
+  </aside>
+
+  <main style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+    <div style="padding: 16px 24px 12px; display: flex; align-items: center; gap: 16px">
+      <h1 style="margin: 0; font-size: 22px; font-weight: 800; flex: 0 0 auto">{{catName}}</h1>
+      <label style="flex: 1; display: flex; align-items: center; gap: 10px; height: 48px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 10px; padding: 0 14px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#545C52" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+        <input aria-label="Search menu" placeholder="Search all menu" style="flex: 1; border: 0; background: transparent; font-size: 16px; outline: none; min-width: 0">
+      </label>
+    </div>
+    <div style="flex: 1; overflow-y: auto; padding: 0 24px 24px">
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+        <sc-for list="{{products}}" as="p" hint-placeholder-count="9">
+          <button onClick="{{p.add}}" style="height: 128px; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between; text-align: left; position: relative; {{p.cardStyle}}">
+            <span style="font-size: 16px; line-height: 22px; font-weight: 600; color: #171A16; padding-right: 36px">{{p.name}}</span>
+            <span style="display: flex; align-items: center; justify-content: space-between">
+              <span style="font-size: 18px; font-weight: 800; color: #171A16; font-variant-numeric: tabular-nums">{{p.price}}</span>
+              <sc-if value="{{p.notInCart}}" hint-placeholder-val="{{true}}"><span style="width: 36px; height: 36px; border-radius: 10px; border: 1px solid #027801; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#027801" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></sc-if>
+            </span>
+            <sc-if value="{{p.inCart}}" hint-placeholder-val="{{false}}"><span style="position: absolute; top: 12px; right: 12px; width: 32px; height: 32px; border-radius: 16px; background: #027801; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 800">{{p.qty}}</span></sc-if>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+  </main>
+
+  <section aria-label="Current order" style="width: 384px; flex: 0 0 auto; background: #FFFFFF; border-left: 1px solid #E1E4DE; display: flex; flex-direction: column">
+    <div style="padding: 16px 12px 12px 20px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #E1E4DE">
+      <div style="flex: 1; display: flex; flex-direction: column"><h2 style="margin: 0; font-size: 18px; font-weight: 800">New order</h2><span style="font-size: 13px; color: #545C52">{{itemCount}} items</span></div>
+      <button onClick="{{clearCart}}" style="height: 44px; padding: 0 12px; border: 0; background: transparent; color: #B3261E; font-size: 15px; font-weight: 700">Clear</button>
+    </div>
+    <div style="flex: 1; overflow-y: auto; padding: 0 20px">
+      <sc-if value="{{noCart}}" hint-placeholder-val="{{false}}">
+        <div style="height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center; color: #545C52; padding: 40px 0">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#C9CEC5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h10"></path></svg>
+          <span style="font-size: 16px; font-weight: 700; color: #171A16">No items yet</span>
+          <span style="font-size: 14px">Tap a menu item to add it</span>
+        </div>
+      </sc-if>
+      <sc-for list="{{lines}}" as="l" hint-placeholder-count="3">
+        <div style="display: flex; flex-direction: column; gap: 8px; padding: 12px 0; border-bottom: 1px solid #E1E4DE">
+          <div style="display: flex; justify-content: space-between; gap: 12px"><span style="font-size: 15px; font-weight: 600">{{l.name}}</span><span style="font-size: 15px; font-weight: 800; font-variant-numeric: tabular-nums">{{l.amount}}</span></div>
+          <div style="display: flex; align-items: center; gap: 8px">
+            <div style="display: flex; align-items: center; border: 1px solid #C9CEC5; border-radius: 10px; height: 44px">
+              <button aria-label="Decrease" onClick="{{l.dec}}" style="width: 44px; height: 42px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#171A16" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"></path></svg></button>
+              <span style="min-width: 28px; text-align: center; font-size: 16px; font-weight: 800; font-variant-numeric: tabular-nums">{{l.qty}}</span>
+              <button aria-label="Increase" onClick="{{l.inc}}" style="width: 44px; height: 42px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#027801" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></button>
+            </div>
+            <button style="flex: 1; height: 44px; border: 1px dashed #C9CEC5; border-radius: 10px; background: #FFFFFF; display: flex; align-items: center; gap: 8px; padding: 0 12px; font-size: 14px; color: #545C52; text-align: left; overflow: hidden"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#545C52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16Z"></path></svg><span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{l.note}}</span></button>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="padding: 16px 20px 20px; border-top: 1px solid #E1E4DE; display: flex; flex-direction: column; gap: 12px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 15px; color: #545C52">Before tax &amp; service</span><span style="font-size: 26px; font-weight: 800; font-variant-numeric: tabular-nums">{{total}}</span></div>
+      <button disabled="{{noCart}}" style="height: 56px; border: 0; border-radius: 10px; font-size: 17px; font-weight: 700; {{ctaStyle}}">Continue to order details</button>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cat: 'ID',
+      cart: { 'ID01': 2, 'ID03': 1, 'BV01': 3 },
+      notes: { 'ID01': 'No egg, extra spicy' }
+    };
+  }
+  data() {
+    return {
+      cats: [
+        { code: 'ID', name: 'Indonesian' }, { code: 'WE', name: 'Western' }, { code: 'SN', name: 'Snacks' },
+        { code: 'BV', name: 'Beverage' }, { code: 'CT', name: 'Coffee & Tea' }, { code: 'DS', name: 'Dessert' }
+      ],
+      products: [
+        { code: 'ID01', cat: 'ID', name: 'Nasi Goreng Kampung', price: 78000 },
+        { code: 'ID02', cat: 'ID', name: 'Mie Goreng Jawa', price: 72000 },
+        { code: 'ID03', cat: 'ID', name: 'Sate Ayam Madura', price: 85000 },
+        { code: 'ID04', cat: 'ID', name: 'Soto Betawi', price: 82000 },
+        { code: 'ID05', cat: 'ID', name: 'Gado-Gado', price: 65000 },
+        { code: 'ID06', cat: 'ID', name: 'Ayam Bakar Taliwang', price: 98000 },
+        { code: 'ID07', cat: 'ID', name: 'Ikan Bakar Jimbaran', price: 145000 },
+        { code: 'ID08', cat: 'ID', name: 'Nasi Campur Bali', price: 92000 },
+        { code: 'WE01', cat: 'WE', name: 'Club Sandwich', price: 95000 },
+        { code: 'WE02', cat: 'WE', name: 'Beef Burger', price: 125000 },
+        { code: 'WE03', cat: 'WE', name: 'Spaghetti Carbonara', price: 105000 },
+        { code: 'WE04', cat: 'WE', name: 'Caesar Salad', price: 80000 },
+        { code: 'WE05', cat: 'WE', name: 'Fish & Chips', price: 115000 },
+        { code: 'SN01', cat: 'SN', name: 'French Fries', price: 45000 },
+        { code: 'SN02', cat: 'SN', name: 'Pisang Goreng', price: 40000 },
+        { code: 'SN03', cat: 'SN', name: 'Lumpia Semarang', price: 48000 },
+        { code: 'SN04', cat: 'SN', name: 'Chicken Wings', price: 68000 },
+        { code: 'BV01', cat: 'BV', name: 'Es Teh Manis', price: 25000 },
+        { code: 'BV02', cat: 'BV', name: 'Es Jeruk', price: 30000 },
+        { code: 'BV03', cat: 'BV', name: 'Jus Alpukat', price: 42000 },
+        { code: 'BV04', cat: 'BV', name: 'Mineral Water', price: 20000 },
+        { code: 'BV05', cat: 'BV', name: 'Coca-Cola', price: 28000 },
+        { code: 'CT01', cat: 'CT', name: 'Kopi Tubruk', price: 30000 },
+        { code: 'CT02', cat: 'CT', name: 'Cappuccino', price: 45000 },
+        { code: 'CT03', cat: 'CT', name: 'Caffe Latte', price: 48000 },
+        { code: 'CT04', cat: 'CT', name: 'Teh Tarik', price: 35000 },
+        { code: 'DS01', cat: 'DS', name: 'Es Campur', price: 45000 },
+        { code: 'DS02', cat: 'DS', name: 'Klepon', price: 35000 },
+        { code: 'DS03', cat: 'DS', name: 'Panna Cotta', price: 55000 }
+      ]
+    };
+  }
+  fmt(n) { return Math.round(n).toLocaleString('id-ID'); }
+  setQty(code, q) {
+    const cart = Object.assign({}, this.state.cart);
+    if (q <= 0) { delete cart[code]; } else { cart[code] = q; }
+    this.setState({ cart: cart });
+  }
+  renderVals() {
+    const d = this.data();
+    const s = this.state;
+    const byCode = {};
+    d.products.forEach((p) => { byCode[p.code] = p; });
+    const catCount = {};
+    Object.keys(s.cart).forEach((code) => { const c = byCode[code].cat; catCount[c] = (catCount[c] || 0) + 1; });
+    let catName = '';
+    const cats = d.cats.map((c) => {
+      const active = c.code === s.cat;
+      if (active) catName = c.name;
+      return {
+        name: c.name,
+        count: catCount[c.code] || 0,
+        hasCount: !!catCount[c.code],
+        style: active ? 'background: #171A16; color: #FFFFFF; font-weight: 700' : 'background: transparent; color: #171A16; font-weight: 600',
+        badgeStyle: active ? 'background: #FFFFFF; color: #171A16' : 'background: #027801; color: #FFFFFF',
+        pick: () => this.setState({ cat: c.code })
+      };
+    });
+    const products = d.products.filter((p) => p.cat === s.cat).map((p) => {
+      const qty = s.cart[p.code] || 0;
+      return {
+        name: p.name,
+        price: this.fmt(p.price),
+        qty: qty,
+        inCart: qty > 0,
+        notInCart: qty === 0,
+        cardStyle: qty > 0 ? 'border: 2px solid #027801; background: #E3F1E0' : 'border: 1px solid #E1E4DE; background: #FFFFFF',
+        add: () => this.setQty(p.code, qty + 1)
+      };
+    });
+    let total = 0;
+    let itemCount = 0;
+    const lines = Object.keys(s.cart).map((code) => {
+      const p = byCode[code];
+      const q = s.cart[code];
+      total += p.price * q;
+      itemCount += q;
+      return {
+        name: p.name, qty: q, amount: this.fmt(p.price * q),
+        note: s.notes[code] || 'Add note',
+        inc: () => this.setQty(code, q + 1),
+        dec: () => this.setQty(code, q - 1)
+      };
+    });
+    return {
+      cats: cats, catName: catName, products: products, lines: lines,
+      total: this.fmt(total), itemCount: itemCount, noCart: itemCount === 0,
+      ctaStyle: itemCount > 0 ? 'background: #027801; color: #FFFFFF' : 'background: #E1E4DE; color: #6B7368',
+      clearCart: () => this.setState({ cart: {} })
+    };
+  }
+}
+</script>
+</body>
+</html>

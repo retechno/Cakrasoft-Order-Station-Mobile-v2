@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Payment</title>
+<!-- design-canvas runtime omitted: open in a browser as static HTML; {{holes}} and sc-for render only in the canvas -->
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#027801}a:hover{color:#015C01}
+button{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F3F4F1; font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif; color: #171A16; display: flex; flex-direction: column; position: relative; overflow: hidden">
+
+  <sc-if value="{{isMethods}}" hint-placeholder-val="{{true}}">
+    <div style="flex: 1; display: flex; flex-direction: column; min-height: 0">
+      <header style="height: 56px; display: flex; align-items: center; gap: 4px; padding: 0 4px; background: #FFFFFF; border-bottom: 1px solid #E1E4DE">
+        <a href="Phone-CO.dc.html" aria-label="Back" style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171A16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18 9 12l6-6"></path></svg></a>
+        <div style="flex: 1; display: flex; flex-direction: column"><h1 style="margin: 0; font-size: 18px; line-height: 24px; font-weight: 800">Payment</h1><span style="font-size: 13px; color: #545C52">CO #10482 · Table 12</span></div>
+      </header>
+      <section style="margin: 16px 16px 0; background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+        <div style="display: flex; justify-content: space-between; font-size: 15px"><span style="color: #545C52">Charge</span><span style="font-weight: 700; font-variant-numeric: tabular-nums">543.833</span></div>
+        <div style="display: flex; justify-content: space-between; font-size: 15px"><span style="color: #545C52">Paid</span><span style="font-weight: 700; font-variant-numeric: tabular-nums">{{paid}}</span></div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid #E1E4DE; padding-top: 10px"><span style="font-size: 16px; font-weight: 700; {{dueColor}}">{{dueLabel}}</span><span style="font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; {{dueColor}}">{{due}}</span></div>
+      </section>
+      <h2 style="margin: 20px 16px 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #545C52">Choose a method</h2>
+      <div style="flex: 1; overflow-y: auto; padding: 0 16px 16px">
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+          <sc-for list="{{methods}}" as="m" hint-placeholder-count="8">
+            <button onClick="{{m.open}}" style="min-height: 76px; border-radius: 10px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px; padding: 10px 14px; text-align: left; {{m.style}}">
+              <span style="font-size: 15px; font-weight: 700; {{m.titleColor}}">{{m.name}}</span>
+              <span style="font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; {{m.subColor}}">{{m.sub}}</span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+      <footer style="background: #FFFFFF; border-top: 1px solid #E1E4DE; padding: 12px 16px 16px">
+        <button onClick="{{askFinish}}" disabled="{{finishDisabled}}" style="width: 100%; height: 56px; border: 0; border-radius: 10px; font-size: 17px; font-weight: 700; {{finishStyle}}">{{finishLabel}}</button>
+      </footer>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{isCash}}" hint-placeholder-val="{{false}}">
+    <div style="flex: 1; display: flex; flex-direction: column; min-height: 0; background: #FFFFFF">
+      <header style="height: 56px; display: flex; align-items: center; gap: 4px; padding: 0 4px; border-bottom: 1px solid #E1E4DE">
+        <button aria-label="Back" onClick="{{back}}" style="width: 48px; height: 48px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171A16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18 9 12l6-6"></path></svg></button>
+        <div style="flex: 1; display: flex; flex-direction: column"><h1 style="margin: 0; font-size: 18px; line-height: 24px; font-weight: 800">Cash</h1><span style="font-size: 13px; color: #545C52">Remaining 543.833</span></div>
+      </header>
+      <div style="padding: 20px 16px 12px; display: flex; flex-direction: column; gap: 12px">
+        <span style="font-size: 13px; font-weight: 600; color: #545C52">Amount received</span>
+        <output style="height: 64px; display: flex; align-items: center; justify-content: flex-end; padding: 0 16px; border: 2px solid #027801; border-radius: 10px; font-size: 34px; font-weight: 800; font-variant-numeric: tabular-nums">{{entry}}</output>
+        <div style="display: flex; justify-content: space-between; font-size: 15px; {{changeColor}}"><span>{{changeLabel}}</span><span style="font-weight: 700; font-variant-numeric: tabular-nums">{{changeValue}}</span></div>
+        <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
+          <sc-for list="{{quick}}" as="q" hint-placeholder-count="4">
+            <button onClick="{{q.pick}}" style="height: 44px; border: 1px solid #C9CEC5; border-radius: 10px; background: #FFFFFF; font-size: 14px; font-weight: 700; color: #171A16; font-variant-numeric: tabular-nums">{{q.label}}</button>
+          </sc-for>
+        </div>
+      </div>
+      <div style="flex: 1; background: #F3F4F1; padding: 12px 16px 16px; display: flex; flex-direction: column; gap: 8px">
+        <div style="flex: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(4, minmax(0, 1fr)); gap: 8px">
+          <sc-for list="{{keys}}" as="k" hint-placeholder-count="12">
+            <button aria-label="{{k.aria}}" onClick="{{k.press}}" style="border: 0; border-radius: 10px; background: #FFFFFF; font-size: 26px; font-weight: 700; color: #171A16; box-shadow: 0 1px 0 #E1E4DE">{{k.label}}</button>
+          </sc-for>
+        </div>
+        <button onClick="{{confirmCash}}" disabled="{{cashDisabled}}" style="height: 56px; border: 0; border-radius: 10px; font-size: 17px; font-weight: 700; {{cashStyle}}">Confirm cash</button>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{isSuccess}}" hint-placeholder-val="{{false}}">
+    <div style="flex: 1; display: flex; flex-direction: column; background: #FFFFFF; padding: 24px 16px 16px">
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center">
+        <div style="width: 80px; height: 80px; border-radius: 40px; background: #E3F1E0; display: flex; align-items: center; justify-content: center"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#027801" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg></div>
+        <h1 style="margin: 0; font-size: 24px; font-weight: 800">Sale completed</h1>
+        <span style="font-size: 15px; color: #545C52">CO #10482 · Check 00231</span>
+        <div style="margin-top: 16px; width: 100%; border: 1px solid #E1E4DE; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 4px; align-items: center">
+          <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #545C52">Change to give</span>
+          <span style="font-size: 40px; line-height: 46px; font-weight: 800; font-variant-numeric: tabular-nums">{{changeValue}}</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <a href="Phone-Printer.dc.html" style="height: 56px; border-radius: 10px; background: #027801; color: #FFFFFF; text-decoration: none; font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 9V3h10v6M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"></path><rect x="7" y="14" width="10" height="7" rx="1"></rect></svg>Print receipt</a>
+        <a href="Phone-Order.dc.html" style="height: 52px; border: 1px solid #C9CEC5; border-radius: 10px; color: #171A16; text-decoration: none; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center">New order</a>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{isConfirm}}" hint-placeholder-val="{{false}}">
+    <div style="position: absolute; inset: 0; background: rgba(23, 26, 22, 0.42); display: flex; align-items: center; justify-content: center; padding: 24px">
+      <section role="dialog" aria-modal="true" style="width: 100%; background: #FFFFFF; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 16px 40px rgba(23, 26, 22, 0.2)">
+        <h2 style="margin: 0; font-size: 20px; font-weight: 800">Finish sale?</h2>
+        <div style="display: flex; flex-direction: column; gap: 6px; font-size: 15px">
+          <div style="display: flex; justify-content: space-between"><span style="color: #545C52">Charge</span><span style="font-weight: 700; font-variant-numeric: tabular-nums">543.833</span></div>
+          <div style="display: flex; justify-content: space-between"><span style="color: #545C52">Paid</span><span style="font-weight: 700; font-variant-numeric: tabular-nums">{{paid}}</span></div>
+          <div style="display: flex; justify-content: space-between"><span style="color: #545C52">Change</span><span style="font-weight: 700; font-variant-numeric: tabular-nums">{{changeValue}}</span></div>
+        </div>
+        <p style="margin: 0; font-size: 14px; line-height: 20px; color: #545C52">The order closes and can no longer be edited.</p>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+          <button onClick="{{back}}" style="height: 52px; border: 1px solid #C9CEC5; border-radius: 10px; background: #FFFFFF; font-size: 16px; font-weight: 700">Cancel</button>
+          <button onClick="{{finish}}" style="height: 52px; border: 0; border-radius: 10px; background: #027801; color: #FFFFFF; font-size: 16px; font-weight: 700">Finish sale</button>
+        </div>
+      </section>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { step: 'methods', entry: '', paid: 0 };
+  }
+  fmt(n) { return Math.round(n).toLocaleString('id-ID'); }
+  renderVals() {
+    const s = this.state;
+    const charge = 543833;
+    const due = charge - s.paid;
+    const covered = due <= 0;
+    const entryNum = parseInt(s.entry || '0', 10);
+    const methodDefs = [
+      { name: 'Cash', kind: 'Cash', cash: true },
+      { name: 'EDC BCA', kind: 'Card' },
+      { name: 'EDC Mandiri', kind: 'Card' },
+      { name: 'Bank transfer', kind: 'Transfer' },
+      { name: 'Transfer to folio', kind: 'Room charge' },
+      { name: 'City ledger', kind: 'Company account' },
+      { name: 'Compliment', kind: 'Complimentary' },
+      { name: 'Voucher', kind: 'Other payment' }
+    ];
+    const methods = methodDefs.map((m) => {
+      const applied = m.cash && s.paid > 0;
+      return {
+        name: m.name,
+        sub: applied ? this.fmt(s.paid) + ' applied' : m.kind,
+        style: applied ? 'border: 2px solid #027801; background: #E3F1E0' : 'border: 1px solid #C9CEC5; background: #FFFFFF',
+        titleColor: applied ? 'color: #0B4A0A' : 'color: #171A16',
+        subColor: applied ? 'color: #0B4A0A' : 'color: #545C52',
+        open: m.cash ? () => this.setState({ step: 'cash', entry: '' }) : () => {}
+      };
+    });
+    const press = (v) => () => {
+      if (v === 'del') { this.setState({ entry: s.entry.slice(0, -1) }); return; }
+      const next = (s.entry + v).replace(/^0+/, '');
+      if (next.length > 10) return;
+      this.setState({ entry: next });
+    };
+    const keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '000', '0', 'del'].map((k) => ({
+      label: k === 'del' ? '⌫' : k,
+      aria: k === 'del' ? 'Delete' : k,
+      press: press(k)
+    }));
+    const quickVals = [charge, 550000, 600000, 1000000];
+    const quick = quickVals.map((v, i) => ({ label: i === 0 ? 'Exact' : this.fmt(v / 1000) + 'k', pick: () => this.setState({ entry: String(v) }) }));
+    const cashChange = entryNum - charge;
+    const finalChange = Math.max(0, s.paid - charge);
+    const onCash = s.step === 'cash';
+    return {
+      isMethods: s.step === 'methods' || s.step === 'confirm',
+      isCash: onCash,
+      isSuccess: s.step === 'success',
+      isConfirm: s.step === 'confirm',
+      paid: this.fmt(s.paid),
+      due: this.fmt(Math.abs(due)),
+      dueLabel: covered ? (due < 0 ? 'Change' : 'Fully paid') : 'Remaining',
+      dueColor: covered ? 'color: #027801' : 'color: #171A16',
+      methods: methods,
+      finishDisabled: !covered,
+      finishStyle: covered ? 'background: #027801; color: #FFFFFF' : 'background: #E1E4DE; color: #6B7368',
+      finishLabel: covered ? 'Finish sale' : 'Remaining ' + this.fmt(due),
+      entry: s.entry ? this.fmt(entryNum) : '0',
+      quick: quick,
+      keys: keys,
+      changeLabel: onCash ? (cashChange >= 0 ? 'Change' : 'Still due') : 'Change',
+      changeValue: onCash ? this.fmt(Math.abs(cashChange)) : this.fmt(finalChange),
+      changeColor: cashChange >= 0 ? 'color: #027801' : 'color: #545C52',
+      cashDisabled: entryNum <= 0,
+      cashStyle: entryNum > 0 ? 'background: #027801; color: #FFFFFF' : 'background: #E1E4DE; color: #6B7368',
+      confirmCash: () => { if (entryNum > 0) this.setState({ step: 'methods', paid: entryNum }); },
+      back: () => this.setState({ step: 'methods' }),
+      askFinish: () => { if (covered) this.setState({ step: 'confirm' }); },
+      finish: () => this.setState({ step: 'success' })
+    };
+  }
+}
+</script>
+</body>
+</html>

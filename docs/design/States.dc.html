@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>States</title>
+<!-- design-canvas runtime omitted: open in a browser as static HTML; {{holes}} and sc-for render only in the canvas -->
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#027801}a:hover{color:#015C01}
+button,input{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 1720px; height: 844px; box-sizing: border-box; padding: 0 20px; background: #E8EAE5; font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif; color: #171A16; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px">
+
+  <section aria-label="Loading" style="height: 844px; background: #F3F4F1; display: flex; flex-direction: column">
+    <header style="background: #FFFFFF; border-bottom: 1px solid #E1E4DE; padding: 8px 16px 12px; display: flex; flex-direction: column; gap: 10px">
+      <div style="display: flex; flex-direction: column; min-height: 48px; justify-content: center"><h1 style="margin: 0; font-size: 20px; font-weight: 800">Captain orders</h1><span style="font-size: 13px; color: #545C52">Loading…</span></div>
+      <div style="display: flex; gap: 8px"><span style="width: 104px; height: 40px; border-radius: 20px; background: #171A16"></span><span style="width: 84px; height: 40px; border-radius: 20px; background: #E1E4DE"></span><span style="width: 112px; height: 40px; border-radius: 20px; background: #E1E4DE"></span></div>
+    </header>
+    <div style="padding: 12px 16px; display: flex; flex-direction: column; gap: 8px">
+      <div style="height: 76px; box-sizing: border-box; border-radius: 10px; background: #FFFFFF; border: 1px solid #E1E4DE; display: flex; align-items: center; gap: 14px; padding: 12px"><span style="width: 52px; height: 52px; border-radius: 10px; background: #E8EAE5"></span><span style="flex: 1; display: flex; flex-direction: column; gap: 8px"><span style="width: 96px; height: 14px; border-radius: 4px; background: #E1E4DE"></span><span style="width: 160px; height: 12px; border-radius: 4px; background: #EEF0EC"></span></span><span style="width: 64px; height: 14px; border-radius: 4px; background: #E1E4DE"></span></div>
+      <div style="height: 76px; box-sizing: border-box; border-radius: 10px; background: #FFFFFF; border: 1px solid #E1E4DE; display: flex; align-items: center; gap: 14px; padding: 12px"><span style="width: 52px; height: 52px; border-radius: 10px; background: #E8EAE5"></span><span style="flex: 1; display: flex; flex-direction: column; gap: 8px"><span style="width: 88px; height: 14px; border-radius: 4px; background: #E1E4DE"></span><span style="width: 140px; height: 12px; border-radius: 4px; background: #EEF0EC"></span></span><span style="width: 72px; height: 14px; border-radius: 4px; background: #E1E4DE"></span></div>
+      <div style="height: 76px; box-sizing: border-box; border-radius: 10px; background: #FFFFFF; border: 1px solid #E1E4DE; display: flex; align-items: center; gap: 14px; padding: 12px"><span style="width: 52px; height: 52px; border-radius: 10px; background: #E8EAE5"></span><span style="flex: 1; display: flex; flex-direction: column; gap: 8px"><span style="width: 100px; height: 14px; border-radius: 4px; background: #E1E4DE"></span><span style="width: 120px; height: 12px; border-radius: 4px; background: #EEF0EC"></span></span><span style="width: 56px; height: 14px; border-radius: 4px; background: #E1E4DE"></span></div>
+      <div style="height: 76px; box-sizing: border-box; border-radius: 10px; background: #FFFFFF; border: 1px solid #E1E4DE; display: flex; align-items: center; gap: 14px; padding: 12px"><span style="width: 52px; height: 52px; border-radius: 10px; background: #E8EAE5"></span><span style="flex: 1; display: flex; flex-direction: column; gap: 8px"><span style="width: 92px; height: 14px; border-radius: 4px; background: #E1E4DE"></span><span style="width: 150px; height: 12px; border-radius: 4px; background: #EEF0EC"></span></span><span style="width: 68px; height: 14px; border-radius: 4px; background: #E1E4DE"></span></div>
+    </div>
+    <p style="margin: auto 16px 20px; font-size: 13px; line-height: 19px; color: #545C52">Skeleton rows match the real row height (76) so nothing jumps when data lands. Shimmer is optional; static blocks are fine.</p>
+  </section>
+
+  <section aria-label="Empty" style="height: 844px; background: #F3F4F1; display: flex; flex-direction: column">
+    <header style="background: #FFFFFF; border-bottom: 1px solid #E1E4DE; padding: 8px 16px 12px; min-height: 48px; display: flex; flex-direction: column; justify-content: center"><h1 style="margin: 0; font-size: 20px; font-weight: 800">Captain orders</h1><span style="font-size: 13px; color: #545C52">Pool Bar</span></header>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 32px; text-align: center">
+      <div style="width: 72px; height: 72px; border-radius: 36px; background: #FFFFFF; border: 1px solid #E1E4DE; display: flex; align-items: center; justify-content: center"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B7368" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"></rect><path d="M9 8h6M9 12h6M9 16h3"></path></svg></div>
+      <h2 style="margin: 0; font-size: 18px; font-weight: 800">No open orders</h2>
+      <p style="margin: 0; font-size: 15px; line-height: 22px; color: #545C52">Orders for Pool Bar appear here once a captain order is saved.</p>
+      <a href="Phone-Order.dc.html" style="margin-top: 8px; height: 52px; padding: 0 24px; border-radius: 10px; background: #027801; color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 700; display: flex; align-items: center">New order</a>
+    </div>
+  </section>
+
+  <section aria-label="Error" style="height: 844px; background: #F3F4F1; display: flex; flex-direction: column">
+    <header style="background: #FFFFFF; border-bottom: 1px solid #E1E4DE; padding: 8px 16px 12px; min-height: 48px; display: flex; flex-direction: column; justify-content: center"><h1 style="margin: 0; font-size: 20px; font-weight: 800">Payment</h1><span style="font-size: 13px; color: #545C52">CO #10482</span></header>
+    <div role="alert" style="margin: 16px 16px 0; padding: 14px; border-radius: 10px; background: #FFF2DC; display: flex; gap: 12px">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9A5B00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto"><path d="M12 3 2 20h20Z"></path><path d="M12 10v4M12 17h.01"></path></svg>
+      <div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 15px; font-weight: 800; color: #5E3800">Payment not confirmed</span><span style="font-size: 14px; line-height: 20px; color: #5E3800">Cash 200.000 at 09:41 got no answer from the server. The order was reloaded — check “Paid” before charging again.</span></div>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 32px; text-align: center">
+      <div style="width: 72px; height: 72px; border-radius: 36px; background: #FCE9E7; display: flex; align-items: center; justify-content: center"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#B3261E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01M3 3l18 18"></path></svg></div>
+      <h2 style="margin: 0; font-size: 18px; font-weight: 800">Can’t reach the server</h2>
+      <p style="margin: 0; font-size: 15px; line-height: 22px; color: #545C52">192.168.1.20:8080 didn’t answer in 15 s. Check the Wi-Fi, then try again.</p>
+      <button style="margin-top: 8px; height: 52px; padding: 0 24px; border: 0; border-radius: 10px; background: #027801; color: #FFFFFF; font-size: 16px; font-weight: 700">Try again</button>
+    </div>
+    <div style="margin: 0 16px 20px; padding: 12px 14px; border-radius: 10px; background: #171A16; color: #FFFFFF; font-size: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px"><span>Captain order has been closed by another user.</span><button style="height: 36px; border: 0; background: transparent; color: #9CD69A; font-size: 14px; font-weight: 800">OK</button></div>
+  </section>
+
+  <section aria-label="Authorise" style="height: 844px; background: rgba(23, 26, 22, 0.42); display: flex; flex-direction: column; justify-content: flex-end">
+    <div style="background: #FFFFFF; border-radius: 16px 16px 0 0; padding: 8px 20px 20px; display: flex; flex-direction: column; gap: 16px">
+      <div style="display: flex; justify-content: center"><span style="width: 36px; height: 4px; border-radius: 2px; background: #C9CEC5"></span></div>
+      <div style="display: flex; align-items: center; gap: 12px">
+        <span style="width: 44px; height: 44px; border-radius: 10px; background: #FCE9E7; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B3261E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></span>
+        <div style="display: flex; flex-direction: column"><h2 style="margin: 0; font-size: 18px; font-weight: 800">Supervisor needed</h2><span style="font-size: 14px; color: #545C52">Remove item · Es Teh Manis × 3</span></div>
+      </div>
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: #545C52">Supervisor ID
+        <input value="SPV02" style="height: 52px; box-sizing: border-box; border: 1px solid #C9CEC5; border-radius: 10px; padding: 0 14px; font-size: 17px; color: #171A16">
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: #545C52">Password
+        <input type="password" value="supervisor" style="height: 52px; box-sizing: border-box; border: 2px solid #B3261E; border-radius: 10px; padding: 0 13px; font-size: 17px">
+        <span style="font-size: 13px; font-weight: 600; color: #B3261E">You don’t have access</span>
+      </label>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+        <button style="height: 52px; border: 1px solid #C9CEC5; border-radius: 10px; background: #FFFFFF; font-size: 16px; font-weight: 700">Cancel</button>
+        <button style="height: 52px; border: 0; border-radius: 10px; background: #027801; color: #FFFFFF; font-size: 16px; font-weight: 700">Authorise</button>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1720,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Captain order</title>
+<!-- design-canvas runtime omitted: open in a browser as static HTML; {{holes}} and sc-for render only in the canvas -->
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#027801}a:hover{color:#015C01}
+button{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F3F4F1; font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif; color: #171A16; display: flex; flex-direction: column; position: relative; overflow: hidden">
+
+  <header style="background: #FFFFFF; border-bottom: 1px solid #E1E4DE">
+    <div style="height: 56px; display: flex; align-items: center; gap: 4px; padding: 0 4px">
+      <a href="Phone-COList.dc.html" aria-label="Back" style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171A16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18 9 12l6-6"></path></svg></a>
+      <div style="flex: 1; display: flex; flex-direction: column">
+        <h1 style="margin: 0; font-size: 18px; line-height: 24px; font-weight: 800">CO #10482</h1>
+        <span style="font-size: 13px; color: #545C52">Kayu Manis Restaurant</span>
+      </div>
+      <button aria-label="Print to kitchen" style="width: 48px; height: 48px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171A16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 9V3h10v6M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"></path><rect x="7" y="14" width="10" height="7" rx="1"></rect></svg></button>
+      <button aria-label="More actions" onClick="{{openMenu}}" style="width: 48px; height: 48px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="#171A16" aria-hidden="true"><circle cx="12" cy="5" r="1.8"></circle><circle cx="12" cy="12" r="1.8"></circle><circle cx="12" cy="19" r="1.8"></circle></svg></button>
+    </div>
+    <dl style="margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; padding: 4px 16px 12px">
+      <div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 12px; color: #545C52">Table</dt><dd style="margin: 0; font-size: 16px; font-weight: 800">12</dd></div>
+      <div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 12px; color: #545C52">Guests</dt><dd style="margin: 0; font-size: 16px; font-weight: 800">2</dd></div>
+      <div style="display: flex; flex-direction: column; gap: 2px; grid-column: span 2; min-width: 0"><dt style="font-size: 12px; color: #545C52">Customer · Compliment</dt><dd style="margin: 0; font-size: 15px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Mr. Hartono · Normal</dd></div>
+    </dl>
+  </header>
+
+  <main style="flex: 1; overflow-y: auto; padding: 0 16px; display: flex; flex-direction: column">
+    <sc-for list="{{lines}}" as="l" hint-placeholder-count="3">
+      <article style="display: flex; flex-direction: column; gap: 10px; padding: 14px 0; border-bottom: 1px solid #E1E4DE">
+        <div style="display: flex; justify-content: space-between; gap: 12px; align-items: flex-start">
+          <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+            <span style="font-size: 16px; line-height: 22px; font-weight: 600">{{l.name}}</span>
+            <span style="font-size: 13px; color: #545C52; font-variant-numeric: tabular-nums">{{l.unit}}</span>
+            <sc-if value="{{l.hasNote}}" hint-placeholder-val="{{false}}"><span style="font-size: 13px; color: #9A5B00">Note: {{l.note}}</span></sc-if>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px; flex: 0 0 auto">
+            <sc-if value="{{l.hasDiscount}}" hint-placeholder-val="{{false}}"><span style="font-size: 13px; color: #6B7368; text-decoration: line-through; font-variant-numeric: tabular-nums">{{l.gross}}</span></sc-if>
+            <span style="font-size: 16px; font-weight: 800; font-variant-numeric: tabular-nums">{{l.net}}</span>
+            <sc-if value="{{l.hasDiscount}}" hint-placeholder-val="{{false}}"><span style="font-size: 12px; font-weight: 700; color: #B3261E">−{{l.disc}}</span></sc-if>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px">
+          <div style="display: flex; align-items: center; border: 1px solid #C9CEC5; border-radius: 10px; height: 44px; background: #FFFFFF">
+            <button aria-label="Decrease" onClick="{{l.dec}}" style="width: 44px; height: 42px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="{{l.decColor}}" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"></path></svg></button>
+            <span style="min-width: 28px; text-align: center; font-size: 16px; font-weight: 800; font-variant-numeric: tabular-nums">{{l.qty}}</span>
+            <button aria-label="Increase" onClick="{{l.inc}}" style="width: 44px; height: 42px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#027801" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></button>
+          </div>
+          <sc-if value="{{l.saving}}" hint-placeholder-val="{{false}}"><span style="font-size: 13px; color: #545C52; display: flex; align-items: center; gap: 6px"><span style="width: 8px; height: 8px; border-radius: 4px; background: #9A5B00"></span>Saving…</span></sc-if>
+          <span style="flex: 1"></span>
+          <button onClick="{{l.options}}" style="height: 44px; padding: 0 12px; border: 0; border-radius: 10px; background: #F3F4F1; font-size: 14px; font-weight: 700; color: #171A16; display: flex; align-items: center; gap: 6px">Options<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171A16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
+        </div>
+      </article>
+    </sc-for>
+    <a href="Phone-Order.dc.html" style="margin: 12px 0 16px; height: 48px; border: 1px dashed #C9CEC5; border-radius: 10px; text-decoration: none; color: #027801; font-size: 15px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#027801" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>Add items</a>
+  </main>
+
+  <footer style="background: #FFFFFF; border-top: 1px solid #E1E4DE; padding: 8px 16px 16px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 -4px 16px rgba(23, 26, 22, 0.06)">
+    <sc-if value="{{expanded}}" hint-placeholder-val="{{false}}">
+      <div style="display: flex; flex-direction: column; gap: 6px; padding: 4px 0 8px; border-bottom: 1px solid #E1E4DE">
+        <div style="display: flex; justify-content: space-between; font-size: 15px"><span style="color: #545C52">Sub total</span><span style="font-variant-numeric: tabular-nums">{{sum.sub}}</span></div>
+        <div style="display: flex; justify-content: space-between; font-size: 15px; align-items: center"><span style="color: #545C52">Discount</span><button onClick="{{openBillDiscount}}" style="height: 32px; border: 0; background: transparent; padding: 0; display: flex; align-items: center; gap: 6px; color: #B3261E; font-size: 15px; font-variant-numeric: tabular-nums"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B3261E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16Z"></path></svg>−{{sum.disc}}</button></div>
+        <div style="display: flex; justify-content: space-between; font-size: 15px"><span style="color: #545C52">Service</span><span style="font-variant-numeric: tabular-nums">{{sum.service}}</span></div>
+        <div style="display: flex; justify-content: space-between; font-size: 15px"><span style="color: #545C52">Tax</span><span style="font-variant-numeric: tabular-nums">{{sum.tax}}</span></div>
+        <div style="display: flex; justify-content: space-between; font-size: 15px; font-weight: 700"><span>Grand total</span><span style="font-variant-numeric: tabular-nums">{{sum.grand}}</span></div>
+        <div style="display: flex; justify-content: space-between; font-size: 15px"><span style="color: #545C52">Paid</span><span style="font-variant-numeric: tabular-nums">0</span></div>
+      </div>
+    </sc-if>
+    <button onClick="{{toggle}}" aria-expanded="{{expanded}}" style="height: 48px; border: 0; background: transparent; padding: 0; display: flex; align-items: center; justify-content: space-between">
+      <span style="display: flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 700; color: #545C52">Charge · {{itemCount}} items<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#545C52" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{chevron}}"></path></svg></span>
+      <span style="font-size: 26px; font-weight: 800; font-variant-numeric: tabular-nums; color: #171A16">{{sum.grand}}</span>
+    </button>
+    <a href="Phone-Payment.dc.html" style="height: 56px; border-radius: 10px; background: #027801; color: #FFFFFF; text-decoration: none; font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center">Pay</a>
+  </footer>
+
+  <sc-if value="{{showOptions}}" hint-placeholder-val="{{false}}">
+    <div style="position: absolute; inset: 0; background: rgba(23, 26, 22, 0.42); display: flex; flex-direction: column; justify-content: flex-end">
+      <button aria-label="Close" onClick="{{close}}" style="flex: 1; border: 0; background: transparent"></button>
+      <section style="background: #FFFFFF; border-radius: 16px 16px 0 0; padding: 8px 8px 20px; display: flex; flex-direction: column">
+        <div style="display: flex; justify-content: center; padding-bottom: 8px"><span style="width: 36px; height: 4px; border-radius: 2px; background: #C9CEC5"></span></div>
+        <div style="padding: 4px 12px 12px; display: flex; flex-direction: column; gap: 2px"><h2 style="margin: 0; font-size: 18px; font-weight: 800">{{target}}</h2><span style="font-size: 13px; color: #545C52">Each action asks for a supervisor ID</span></div>
+        <button style="height: 56px; border: 0; background: transparent; border-radius: 10px; display: flex; align-items: center; gap: 14px; padding: 0 12px; font-size: 16px; font-weight: 600; color: #171A16; text-align: left"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171A16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5H5v4M15 19h4v-4M5 15l14-10"></path><circle cx="7.5" cy="16.5" r="2.5"></circle><circle cx="16.5" cy="7.5" r="2.5"></circle></svg><span style="flex: 1">Discount</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B7368" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Needs authorisation" role="img"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></button>
+        <button style="height: 56px; border: 0; background: transparent; border-radius: 10px; display: flex; align-items: center; gap: 14px; padding: 0 12px; font-size: 16px; font-weight: 600; color: #171A16; text-align: left"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171A16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M17 7H9.5a3 3 0 0 0 0 6h5a3 3 0 0 1 0 6H6"></path></svg><span style="flex: 1">Override price</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B7368" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Needs authorisation" role="img"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></button>
+        <button style="height: 56px; border: 0; background: transparent; border-radius: 10px; display: flex; align-items: center; gap: 14px; padding: 0 12px; font-size: 16px; font-weight: 600; color: #B3261E; text-align: left"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B3261E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg><span style="flex: 1">Remove item</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B7368" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Needs authorisation" role="img"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></button>
+      </section>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{showMenu}}" hint-placeholder-val="{{false}}">
+    <div style="position: absolute; inset: 0; background: rgba(23, 26, 22, 0.42); display: flex; flex-direction: column; justify-content: flex-end">
+      <button aria-label="Close" onClick="{{close}}" style="flex: 1; border: 0; background: transparent"></button>
+      <section style="background: #FFFFFF; border-radius: 16px 16px 0 0; padding: 8px 8px 20px; display: flex; flex-direction: column">
+        <div style="display: flex; justify-content: center; padding-bottom: 8px"><span style="width: 36px; height: 4px; border-radius: 2px; background: #C9CEC5"></span></div>
+        <h2 style="margin: 0; padding: 4px 12px 12px; font-size: 18px; font-weight: 800">CO #10482</h2>
+        <button style="height: 56px; border: 0; background: transparent; display: flex; align-items: center; gap: 14px; padding: 0 12px; font-size: 16px; font-weight: 600; color: #171A16; text-align: left"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171A16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 13h12M6 13a6 6 0 0 1 12 0M4 17h16M12 7V5"></path></svg>Print to kitchen</button>
+        <a href="Phone-Printer.dc.html" style="height: 56px; text-decoration: none; display: flex; align-items: center; gap: 14px; padding: 0 12px; font-size: 16px; font-weight: 600; color: #171A16"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171A16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 9V3h10v6M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"></path><rect x="7" y="14" width="10" height="7" rx="1"></rect></svg>Print captain order</a>
+        <button onClick="{{openBillDiscount}}" style="height: 56px; border: 0; background: transparent; display: flex; align-items: center; gap: 14px; padding: 0 12px; font-size: 16px; font-weight: 600; color: #171A16; text-align: left"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171A16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5H5v4M15 19h4v-4M5 15l14-10"></path><circle cx="7.5" cy="16.5" r="2.5"></circle><circle cx="16.5" cy="7.5" r="2.5"></circle></svg>Bill discount</button>
+        <button style="height: 56px; border: 0; background: transparent; display: flex; align-items: center; gap: 14px; padding: 0 12px; font-size: 16px; font-weight: 600; color: #B3261E; text-align: left"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B3261E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg>Remove all items</button>
+      </section>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{showDiscount}}" hint-placeholder-val="{{false}}">
+    <div style="position: absolute; inset: 0; background: rgba(23, 26, 22, 0.42); display: flex; flex-direction: column; justify-content: flex-end">
+      <button aria-label="Close" onClick="{{close}}" style="flex: 1; border: 0; background: transparent"></button>
+      <section style="background: #FFFFFF; border-radius: 16px 16px 0 0; padding: 8px 20px 20px; display: flex; flex-direction: column; gap: 16px">
+        <div style="display: flex; justify-content: center"><span style="width: 36px; height: 4px; border-radius: 2px; background: #C9CEC5"></span></div>
+        <div style="display: flex; flex-direction: column; gap: 2px"><h2 style="margin: 0; font-size: 18px; font-weight: 800">Bill discount</h2><span style="font-size: 13px; color: #545C52">Authorised by SPV02 · applies to the whole order</span></div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; background: #F3F4F1; border-radius: 10px; padding: 4px">
+          <button style="height: 44px; border: 0; border-radius: 8px; background: #FFFFFF; box-shadow: 0 1px 3px rgba(23, 26, 22, 0.14); font-size: 15px; font-weight: 800">Amount</button>
+          <button disabled style="height: 44px; border: 0; border-radius: 8px; background: transparent; font-size: 15px; font-weight: 600; color: #6B7368">Percent</button>
+        </div>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: #545C52">Discount amount
+          <input inputmode="decimal" value="25.000" style="height: 56px; box-sizing: border-box; border: 2px solid #027801; border-radius: 10px; padding: 0 14px; font-size: 24px; font-weight: 800; text-align: right; font-family: inherit; font-variant-numeric: tabular-nums">
+        </label>
+        <button onClick="{{close}}" style="height: 52px; border: 0; border-radius: 10px; background: #027801; color: #FFFFFF; font-size: 17px; font-weight: 700">Apply discount</button>
+      </section>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      qty: { a: 2, b: 1, c: 3, d: 1 },
+      saving: null,
+      expanded: false,
+      sheet: null,
+      target: ''
+    };
+    this.timer = null;
+  }
+  componentWillUnmount() { if (this.timer) clearTimeout(this.timer); }
+  fmt(n) { return Math.round(n).toLocaleString('id-ID'); }
+  change(id, q) {
+    if (q < 1) return;
+    const qty = Object.assign({}, this.state.qty);
+    qty[id] = q;
+    this.setState({ qty: qty, saving: id });
+    if (this.timer) clearTimeout(this.timer);
+    this.timer = setTimeout(() => this.setState({ saving: null }), 1500);
+  }
+  renderVals() {
+    const s = this.state;
+    const items = [
+      { id: 'a', name: 'Nasi Goreng Kampung', price: 78000, discPct: 0.1, note: 'No egg, extra spicy' },
+      { id: 'b', name: 'Sate Ayam Madura', price: 85000, discPct: 0, note: '' },
+      { id: 'c', name: 'Es Teh Manis', price: 25000, discPct: 0, note: 'Less sugar' },
+      { id: 'd', name: 'Ikan Bakar Jimbaran', price: 145000, discPct: 0, note: '' }
+    ];
+    let sub = 0, disc = 0, count = 0;
+    const lines = items.map((it) => {
+      const q = s.qty[it.id];
+      const gross = it.price * q;
+      const d = Math.round(gross * it.discPct);
+      sub += gross; disc += d; count += q;
+      return {
+        name: it.name,
+        unit: q + ' × ' + this.fmt(it.price),
+        qty: q,
+        gross: this.fmt(gross),
+        net: this.fmt(gross - d),
+        disc: this.fmt(d),
+        hasDiscount: d > 0,
+        note: it.note,
+        hasNote: !!it.note,
+        saving: s.saving === it.id,
+        decColor: q > 1 ? '#171A16' : '#C9CEC5',
+        inc: () => this.change(it.id, q + 1),
+        dec: () => this.change(it.id, q - 1),
+        options: () => this.setState({ sheet: 'options', target: it.name })
+      };
+    });
+    const after = sub - disc;
+    const service = Math.round(after * 0.1);
+    const tax = Math.round((after + service) * 0.11);
+    const grand = after + service + tax;
+    return {
+      lines: lines,
+      itemCount: count,
+      expanded: s.expanded,
+      chevron: s.expanded ? 'm6 15 6-6 6 6' : 'm6 9 6 6 6-6',
+      sum: { sub: this.fmt(sub), disc: this.fmt(disc), service: this.fmt(service), tax: this.fmt(tax), grand: this.fmt(grand) },
+      target: s.target,
+      showOptions: s.sheet === 'options',
+      showMenu: s.sheet === 'menu',
+      showDiscount: s.sheet === 'discount',
+      toggle: () => this.setState({ expanded: !s.expanded }),
+      openMenu: () => this.setState({ sheet: 'menu' }),
+      openBillDiscount: () => this.setState({ sheet: 'discount' }),
+      close: () => this.setState({ sheet: null })
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Design system</title>
+<!-- design-canvas runtime omitted: open in a browser as static HTML; {{holes}} and sc-for render only in the canvas -->
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#027801}a:hover{color:#015C01}
+button{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 1280px; height: 1640px; box-sizing: border-box; padding: 56px; background: #F3F4F1; font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif; color: #171A16; display: flex; flex-direction: column; gap: 40px">
+
+  <header style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px">
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #027801">Cakrasoft Order Station · v2</div>
+      <h1 style="margin: 0; font-size: 40px; line-height: 46px; font-weight: 800; letter-spacing: -0.02em">Operational green</h1>
+      <p style="margin: 0; font-size: 16px; line-height: 24px; color: #545C52; max-width: 640px">Neutral, quiet surfaces so the existing primary does one job: mark the next action. Prices are the loudest text on every screen.</p>
+    </div>
+    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 10px">
+      <div style="width: 40px; height: 40px; border-radius: 8px; background: #027801"></div>
+      <div style="display: flex; flex-direction: column">
+        <span style="font-size: 13px; color: #545C52">Primary — kept exactly</span>
+        <span style="font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums">#027801 · ARGB(255, 2, 120, 1)</span>
+      </div>
+    </div>
+  </header>
+
+  <section style="display: flex; flex-direction: column; gap: 16px">
+    <h2 style="margin: 0; font-size: 20px; font-weight: 700">Color tokens</h2>
+    <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px">
+      <div style="background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 10px; overflow: hidden"><div style="height: 64px; background: #027801"></div><div style="padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 13px">primary</b><span style="font-size: 12px; color: #545C52">#027801</span></div></div>
+      <div style="background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 10px; overflow: hidden"><div style="height: 64px; background: #015C01"></div><div style="padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 13px">primaryPressed</b><span style="font-size: 12px; color: #545C52">#015C01</span></div></div>
+      <div style="background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 10px; overflow: hidden"><div style="height: 64px; background: #E3F1E0"></div><div style="padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 13px">primaryContainer</b><span style="font-size: 12px; color: #545C52">#E3F1E0</span></div></div>
+      <div style="background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 10px; overflow: hidden"><div style="height: 64px; background: #0B4A0A"></div><div style="padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 13px">onPrimaryContainer</b><span style="font-size: 12px; color: #545C52">#0B4A0A</span></div></div>
+      <div style="background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 10px; overflow: hidden"><div style="height: 64px; background: #B3261E"></div><div style="padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 13px">danger</b><span style="font-size: 12px; color: #545C52">#B3261E · bg #FCE9E7</span></div></div>
+      <div style="background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 10px; overflow: hidden"><div style="height: 64px; background: #9A5B00"></div><div style="padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 13px">warning</b><span style="font-size: 12px; color: #545C52">#9A5B00 · bg #FFF2DC</span></div></div>
+      <div style="background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 10px; overflow: hidden"><div style="height: 64px; background: #F3F4F1; border-bottom: 1px solid #E1E4DE"></div><div style="padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 13px">background</b><span style="font-size: 12px; color: #545C52">#F3F4F1</span></div></div>
+      <div style="background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 10px; overflow: hidden"><div style="height: 64px; background: #FFFFFF; border-bottom: 1px solid #E1E4DE"></div><div style="padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 13px">surface</b><span style="font-size: 12px; color: #545C52">#FFFFFF · muted #F8F9F7</span></div></div>
+      <div style="background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 10px; overflow: hidden"><div style="height: 64px; background: #E1E4DE"></div><div style="padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 13px">border</b><span style="font-size: 12px; color: #545C52">#E1E4DE · strong #C9CEC5</span></div></div>
+      <div style="background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 10px; overflow: hidden"><div style="height: 64px; background: #171A16"></div><div style="padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 13px">textPrimary</b><span style="font-size: 12px; color: #545C52">#171A16 · 17.6:1</span></div></div>
+      <div style="background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 10px; overflow: hidden"><div style="height: 64px; background: #545C52"></div><div style="padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 13px">textSecondary</b><span style="font-size: 12px; color: #545C52">#545C52 · 6.9:1</span></div></div>
+      <div style="background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 10px; overflow: hidden"><div style="height: 64px; background: #6B7368"></div><div style="padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 13px">textTertiary</b><span style="font-size: 12px; color: #545C52">#6B7368 · 4.9:1</span></div></div>
+    </div>
+  </section>
+
+  <section style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px">
+    <div style="background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+      <h2 style="margin: 0 0 4px; font-size: 20px; font-weight: 700">Type scale · Plus Jakarta Sans</h2>
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; border-bottom: 1px solid #E1E4DE; padding-bottom: 12px"><span style="font-size: 32px; line-height: 38px; font-weight: 800; font-variant-numeric: tabular-nums">Rp 1.284.500</span><span style="font-size: 12px; color: #6B7368">amountXL 32/38 · 800 · tnum</span></div>
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px"><span style="font-size: 24px; line-height: 30px; font-weight: 700">Captain Order #10482</span><span style="font-size: 12px; color: #6B7368">title 24/30 · 700</span></div>
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px"><span style="font-size: 18px; line-height: 24px; font-weight: 700">Payment methods</span><span style="font-size: 12px; color: #6B7368">heading 18/24 · 700</span></div>
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px"><span style="font-size: 16px; line-height: 22px; font-weight: 600">Nasi Goreng Kampung</span><span style="font-size: 12px; color: #6B7368">itemTitle 16/22 · 600</span></div>
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px"><span style="font-size: 16px; line-height: 22px; font-weight: 700; font-variant-numeric: tabular-nums">78.000</span><span style="font-size: 12px; color: #6B7368">price 16/22 · 700 · tnum</span></div>
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px"><span style="font-size: 15px; line-height: 22px">Body text for forms and descriptions</span><span style="font-size: 12px; color: #6B7368">body 15/22 · 400</span></div>
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px"><span style="font-size: 13px; line-height: 18px; color: #545C52">Table 12 · 4 guests · Shift B</span><span style="font-size: 12px; color: #6B7368">caption 13/18 · 500</span></div>
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px"><span style="font-size: 12px; line-height: 16px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #545C52">Order summary</span><span style="font-size: 12px; color: #6B7368">overline 12/16 · 700 · +6%</span></div>
+      <p style="margin: 4px 0 0; font-size: 13px; line-height: 19px; color: #545C52">Minimum 13 px anywhere a cashier reads. Bundle Regular, Medium, SemiBold, Bold, ExtraBold — no synthesised bold.</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 24px">
+      <div style="background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+        <h2 style="margin: 0; font-size: 20px; font-weight: 700">Spacing · 4-pt</h2>
+        <div style="display: flex; align-items: flex-end; gap: 18px">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><div style="width: 4px; height: 4px; background: #027801"></div><span style="font-size: 12px; color: #545C52">xs 4</span></div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><div style="width: 8px; height: 8px; background: #027801"></div><span style="font-size: 12px; color: #545C52">sm 8</span></div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><div style="width: 12px; height: 12px; background: #027801"></div><span style="font-size: 12px; color: #545C52">md 12</span></div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><div style="width: 16px; height: 16px; background: #027801"></div><span style="font-size: 12px; color: #545C52">lg 16</span></div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><div style="width: 20px; height: 20px; background: #027801"></div><span style="font-size: 12px; color: #545C52">xl 20</span></div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><div style="width: 24px; height: 24px; background: #027801"></div><span style="font-size: 12px; color: #545C52">2xl 24</span></div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><div style="width: 32px; height: 32px; background: #027801"></div><span style="font-size: 12px; color: #545C52">3xl 32</span></div>
+        </div>
+        <p style="margin: 0; font-size: 13px; line-height: 19px; color: #545C52">Screen gutter 16 (phone) / 24 (tablet). Row padding 12×16. Section gap 16.</p>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+        <h2 style="margin: 0; font-size: 20px; font-weight: 700">Radius, elevation, touch</h2>
+        <div style="display: flex; gap: 16px; align-items: center">
+          <div style="width: 72px; height: 56px; border: 1px solid #C9CEC5; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #545C52">sm 6</div>
+          <div style="width: 72px; height: 56px; border: 1px solid #C9CEC5; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #545C52">md 10</div>
+          <div style="width: 72px; height: 56px; border: 1px solid #C9CEC5; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #545C52">lg 14</div>
+          <div style="width: 72px; height: 56px; border-radius: 14px; background: #FFFFFF; box-shadow: 0 8px 24px rgba(23, 26, 22, 0.12); display: flex; align-items: center; justify-content: center; font-size: 12px; color: #545C52">sheet</div>
+        </div>
+        <p style="margin: 0; font-size: 13px; line-height: 19px; color: #545C52">Borders separate, shadows only for things that float (sheets, dialogs, sticky cart). Every tap target ≥ 48 × 48; primary actions 52 high.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="display: flex; flex-direction: column; gap: 16px">
+    <h2 style="margin: 0; font-size: 20px; font-weight: 700">Components</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+
+      <div style="background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+        <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #545C52">AppButton</span>
+        <button style="height: 52px; border: 0; border-radius: 10px; background: #027801; color: #FFFFFF; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: space-between; padding: 0 18px"><span>Pay</span><span style="font-variant-numeric: tabular-nums">Rp 342.100</span></button>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+          <button style="height: 48px; border: 1px solid #C9CEC5; border-radius: 10px; background: #FFFFFF; color: #171A16; font-size: 15px; font-weight: 600">Secondary</button>
+          <button style="height: 48px; border: 0; border-radius: 10px; background: #E3F1E0; color: #0B4A0A; font-size: 15px; font-weight: 600">Tonal</button>
+          <button style="height: 48px; border: 0; border-radius: 10px; background: transparent; color: #027801; font-size: 15px; font-weight: 600">Text</button>
+          <button style="height: 48px; border: 0; border-radius: 10px; background: #FCE9E7; color: #B3261E; font-size: 15px; font-weight: 600">Danger</button>
+        </div>
+        <button disabled style="height: 52px; border: 0; border-radius: 10px; background: #E1E4DE; color: #6B7368; font-size: 16px; font-weight: 700">Disabled = not tappable</button>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+        <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #545C52">AppTextField · AppSearchField</span>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: #545C52">User ID
+          <input value="KASIR01" style="height: 48px; box-sizing: border-box; border: 1px solid #C9CEC5; border-radius: 10px; padding: 0 14px; font-size: 16px; font-family: inherit; color: #171A16">
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: #545C52">Password
+          <input type="password" value="secret12" style="height: 48px; box-sizing: border-box; border: 2px solid #027801; border-radius: 10px; padding: 0 13px; font-size: 16px; font-family: inherit">
+        </label>
+        <label style="display: flex; align-items: center; gap: 10px; height: 48px; box-sizing: border-box; background: #F3F4F1; border-radius: 10px; padding: 0 14px">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#545C52" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+          <span style="position: absolute; width: 1px; height: 1px; overflow: hidden">Search menu</span>
+          <input placeholder="Search menu" style="flex: 1; border: 0; background: transparent; font-size: 16px; font-family: inherit; outline: none">
+        </label>
+        <span style="font-size: 13px; color: #B3261E">Password is too short.</span>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+        <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #545C52">QtyStepper · CategoryChips</span>
+        <div style="display: flex; align-items: center; gap: 12px">
+          <div style="display: flex; align-items: center; border: 1px solid #C9CEC5; border-radius: 10px; height: 48px">
+            <button aria-label="Decrease" style="width: 48px; height: 46px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#171A16" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"></path></svg></button>
+            <span style="min-width: 32px; text-align: center; font-size: 17px; font-weight: 700; font-variant-numeric: tabular-nums">2</span>
+            <button aria-label="Increase" style="width: 48px; height: 46px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#027801" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></button>
+          </div>
+          <button style="height: 48px; padding: 0 18px; border: 0; border-radius: 10px; background: #027801; color: #FFFFFF; font-size: 15px; font-weight: 700; display: flex; align-items: center; gap: 6px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>Add</button>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap">
+          <button style="height: 40px; padding: 0 14px; border: 0; border-radius: 20px; background: #171A16; color: #FFFFFF; font-size: 14px; font-weight: 600">Indonesian · 2</button>
+          <button style="height: 40px; padding: 0 14px; border: 1px solid #C9CEC5; border-radius: 20px; background: #FFFFFF; color: #171A16; font-size: 14px; font-weight: 600">Western</button>
+          <button style="height: 40px; padding: 0 14px; border: 1px solid #C9CEC5; border-radius: 20px; background: #FFFFFF; color: #171A16; font-size: 14px; font-weight: 600">Beverage</button>
+        </div>
+        <p style="margin: 0; font-size: 13px; line-height: 19px; color: #545C52">Selected chip is ink, not green — green stays reserved for actions. Count badge = items from that category already in the order.</p>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+        <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #545C52">ProductTile · list &amp; grid</span>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #E1E4DE">
+          <div style="width: 52px; height: 52px; border-radius: 8px; background: #F3F4F1; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #6B7368">NG</div>
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 16px; font-weight: 600">Nasi Goreng Kampung</span><span style="font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums">78.000</span></div>
+          <button style="height: 44px; padding: 0 16px; border: 1px solid #027801; border-radius: 10px; background: #FFFFFF; color: #027801; font-size: 15px; font-weight: 700">Add</button>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 10px; background: #E3F1E0">
+          <div style="width: 52px; height: 52px; border-radius: 8px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #6B7368">ST</div>
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 600">Sate Ayam Madura</span><span style="font-size: 13px; color: #0B4A0A">2 in order · Note: no peanut</span></div>
+          <span style="width: 32px; height: 32px; border-radius: 16px; background: #027801; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 800">2</span>
+        </div>
+        <p style="margin: 0; font-size: 13px; line-height: 19px; color: #545C52">Whole row adds one. In-order rows turn tonal; qty and notes are edited in the cart, not in a 25 px row control.</p>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #545C52">OrderSummary</span>
+        <div style="display: flex; justify-content: space-between; font-size: 15px"><span style="color: #545C52">Sub total</span><span style="font-variant-numeric: tabular-nums">290.000</span></div>
+        <div style="display: flex; justify-content: space-between; font-size: 15px"><span style="color: #545C52">Discount</span><span style="font-variant-numeric: tabular-nums; color: #B3261E">−29.000</span></div>
+        <div style="display: flex; justify-content: space-between; font-size: 15px"><span style="color: #545C52">Service</span><span style="font-variant-numeric: tabular-nums">26.100</span></div>
+        <div style="display: flex; justify-content: space-between; font-size: 15px"><span style="color: #545C52">Tax</span><span style="font-variant-numeric: tabular-nums">31.581</span></div>
+        <div style="display: flex; justify-content: space-between; font-size: 15px"><span style="color: #545C52">Paid</span><span style="font-variant-numeric: tabular-nums">0</span></div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid #E1E4DE; padding-top: 10px"><span style="font-size: 16px; font-weight: 700">Charge</span><span style="font-size: 24px; font-weight: 800; font-variant-numeric: tabular-nums">318.681</span></div>
+        <p style="margin: 0; font-size: 13px; line-height: 19px; color: #545C52">Values come straight from <code>summary</code>; no client-side math is added.</p>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E1E4DE; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+        <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #545C52">PaymentMethodTile · AppBar · NavBar</span>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+          <button style="height: 72px; border: 2px solid #027801; border-radius: 10px; background: #E3F1E0; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px; padding: 0 14px; text-align: left"><span style="font-size: 15px; font-weight: 700; color: #0B4A0A">Cash</span><span style="font-size: 13px; font-weight: 600; color: #0B4A0A; font-variant-numeric: tabular-nums">200.000 applied</span></button>
+          <button style="height: 72px; border: 1px solid #C9CEC5; border-radius: 10px; background: #FFFFFF; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px; padding: 0 14px; text-align: left"><span style="font-size: 15px; font-weight: 700; color: #171A16">EDC BCA</span><span style="font-size: 13px; color: #545C52">Card</span></button>
+        </div>
+        <div style="display: flex; align-items: center; gap: 4px; height: 56px; border: 1px solid #E1E4DE; border-radius: 10px; padding: 0 4px">
+          <button aria-label="Back" style="width: 48px; height: 48px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171A16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18 9 12l6-6"></path></svg></button>
+          <div style="flex: 1; display: flex; flex-direction: column"><span style="font-size: 17px; font-weight: 700">CO #10482</span><span style="font-size: 12px; color: #545C52">Kayu Manis Restaurant</span></div>
+          <button aria-label="More" style="width: 48px; height: 48px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="#171A16" aria-hidden="true"><circle cx="12" cy="5" r="1.8"></circle><circle cx="12" cy="12" r="1.8"></circle><circle cx="12" cy="19" r="1.8"></circle></svg></button>
+        </div>
+        <p style="margin: 0; font-size: 13px; line-height: 19px; color: #545C52">App bar 56, left-aligned, replaces the 100 px TitleHeaderWidget. Bottom nav 64 with labels always shown.</p>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1640}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
