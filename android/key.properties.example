@@ -1,0 +1,6 @@
+# Salin menjadi android/key.properties (file itu di-ignore git).
+# Buat keystore: keytool -genkey -v -keystore ~/cakrasoft-release.jks -keyalg RSA -keysize 2048 -validity 10000 -alias cakrasoft
+storeFile=../../cakrasoft-release.jks
+storePassword=
+keyAlias=cakrasoft
+keyPassword=
